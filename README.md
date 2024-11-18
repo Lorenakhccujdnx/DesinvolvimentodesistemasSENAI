@@ -1,2 +1,2 @@
-# DesinvolvimentodesistemasSENAI
- repositorio das aulas
+# DesesnvolvimentodeSistemasSENAI
+ Repositório para curso do senai
