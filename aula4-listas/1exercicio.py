@@ -27,7 +27,7 @@ print(f"Adicionado 7: {lista1}")
 # Inserindo o número 3 na posição 2
 
 lista1.insert(2,3)
-print(lista1)
+print(f"Inserir 3: {lista1}")
 
 # Substituindo o valor na posição 1 por 10
 
@@ -39,9 +39,9 @@ print(f"Substituir o valor na posição 1 por 10: {lista1}")
 lista1.remove(9)
 print(f"Remover o valor 9: {lista1}")
 
-# Excluindo os elementos da posição 2 até a posição 4 
+# Excluir os elementos da posição 2 até a posição 4 
 
 del lista1[2:5]
-print(f"Excluindo elementos da posição 2 até a posição 4: {lista1}")
+print(f"Excluir elementos da posição 2 até a posição 4: {lista1}")
 
 
