@@ -18,7 +18,7 @@ modulo = 10 % 10 # resto da divisao
 # if/ else
 condicao = 1
 
-if condicao
+if condicao :
     print ('teste')
 else :
     print ('teste2')
@@ -36,7 +36,7 @@ if n1 > n2:
 elif n2 > n1:
     print ('Segundo numero é o maior')
 else :
-    print ('Amboms sao o mesmo numero!')
+    print ('Ambos sao o mesmo numero!')
 
 # AND (E)
 # OR (OU)
