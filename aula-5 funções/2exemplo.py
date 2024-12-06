@@ -1,13 +1,8 @@
-def somarMuitos(*numeros) :
-    valorTotal = 0
+import mod_2exemplo as md
 
-    for numero in numeros:
-        valorTotal += numero
-        print(numeros, valorTotal)
-
-somarMuitos (1,2)
-somarMuitos (250,901,412,312)
-somarMuitos (410,1203)
+md.somarMuitos (1,2)
+md.somarMuitos (250,901,412,312)
+md.somarMuitos (410,1203)
 
 # código diferente
 # sum - somar
