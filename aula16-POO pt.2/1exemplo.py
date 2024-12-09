@@ -9,7 +9,7 @@ ENCAPSULAMENTO
 class Carro:
     def __init__(self,nome,cor,placa,peso,marca):
         self.__nome = nome
-    # não pode ser alterado 
+    # não pode ser alterado (privado)
         self.cor = cor
     # pode ser alterado durante todo o código
         self._placa = placa
@@ -26,4 +26,6 @@ print(carro1)
 # dois metodos para apresentar objeto
 print(vars(carro1))
 carro1.alterarPlaca('ESCADAGOD')
+# imprime a placa alterada da placa
 print(carro1.__dict__)
+# imprime todo

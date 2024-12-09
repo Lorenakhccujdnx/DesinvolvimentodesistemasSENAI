@@ -1,6 +1,19 @@
 # Windows - cls
 # macOs e Linux - clear
 
+import os
+
+# Limpando o terminal
+def apagar():
+    if os.plataform == "win32":
+        os.system("cls")
+    else: 
+        os.system("clear")
+
+class Veiculo:
+    def __init__(self, nome):
+        self.nome = nome  
+    # Atributo da classe Veiculo
 
 class Motorista :
     def __init__(self,nome):
@@ -17,7 +30,7 @@ class Carro:
         self.velocidade = 0
         self.portaMalas = ['Step']
     def acelerar(self,velocidadeAcelerada):
-    # os.system("csl")
+    # os.system("cls")
     # para limpar terminal
         if velocidadeAcelerada <= 0:
             print("VALOR INVÁLIDO!")
