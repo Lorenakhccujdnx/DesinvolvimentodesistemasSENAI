@@ -13,3 +13,7 @@ num4 = float(input('Digite o quarto número: '))
 maior = max(num1, num2, num3, num4)
 
 menor = min(num1, num2, num3, num4)
+
+print(f'O maior número é: {maior}')
+
+print(f'O menor número é: {menor}')
