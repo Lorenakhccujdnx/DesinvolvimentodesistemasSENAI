@@ -3,28 +3,72 @@
 # e nesse podemos adicionar ao carrinho ou visualizar-lo.
 #  Até chegarmos na finalização do qual mostrará o valor total
 
-print("1- R$ 3.00 toddynho")
-print("2- R$ 3.50 coxinha")
-print("3- R$ 2.70 suco de uva")
-print("4- R$ 6.00 biscoito de goiabada")
-print("5- R$ 8.90 rafaello")
-print("6- R$ 5.00 pastel de fango com catupiry")
-print("7- FINALIZAR COMPRA")
+def mostrar_catalogo(produtos):
+    print("Catálogo de Produtos:")
+    for codigo, produto in produtos.items():
+        print(f"{codigo}: {produto['nome']} - R$ {produto['preço']:.2f}")
 
-carrinho = []
+def adicionar_ao_carrinho(carrinho, produtos):
+    codigo = input("Digite o código do produto que deseja adicionar ao carrinho: ")
+    if codigo in produtos:
+        if codigo in carrinho:
+            carrinho[codigo]['quantidade'] += 1
+        else:
+            carrinho[codigo] = {
+                'nome': produtos[codigo]['nome'],
+                'preço': produtos[codigo]['preço'],
+                'quantidade': 1
+            }
+        print(f"{produtos[codigo]['nome']} adicionado ao carrinho.")
+    else:
+        print("Código de produto inválido.")
 
-while True:
-    produto = input("Escolha um produto (0 para sair): ")
-    if produto == "0":
-        break
-    quantidade = int(input("Digite a quantidade: "))
-    preco = float(input("Digite o preço: "))
-    carrinho.append((quantidade, preco))
-    print(f"Item adicionado ao carrinho: {quantidade} * {preco} = {quantidade * preco}")
-    print("-------------------")
-    total = sum(quantidade * preco for quantidade, preco in carrinho)
-    print(f"Total: R$ {total}")
-    print("--------------------")
-    print("Deseja continuar comprando? (S/N)")
-    escolha = input("Digite a opção desejada:")
-    if escolha.lower() == "n":
+def visualizar_carrinho(carrinho):
+    if carrinho:
+        print("Carrinho de Compras:")
+        for item in carrinho.values():
+            print(f"{item['nome']} - R$ {item['preço']:.2f} x {item['quantidade']}")
+    else:
+        print("Carrinho está vazio.")
+
+def finalizar_compra(carrinho):
+    total = sum(item['preço'] * item['quantidade'] for item in carrinho.values())
+    print(f"Valor total da compra: R$ {total:.2f}")
+
+def main():
+    produtos = {
+        '1': {'nome': 'Camiseta', 'preço': 50.00},
+        '2': {'nome': 'Calça', 'preço': 100.00},
+        '3': {'nome': 'Tênis', 'preço': 200.00},
+        '4': {'nome': 'Boné', 'preço': 30.00},
+        '5': {'nome': 'Jaqueta', 'preço': 150.00}
+    }
+    
+    carrinho = {}
+
+    while True:
+        print("\n1. Mostrar Catálogo")
+        print("2. Adicionar ao Carrinho")
+        print("3. Visualizar Carrinho")
+        print("4. Finalizar Compra")
+        print("5. Sair")
+        
+        opcao = input("Escolha uma opção: ")
+        
+        if opcao == '1':
+            mostrar_catalogo(produtos)
+        elif opcao == '2':
+            adicionar_ao_carrinho(carrinho, produtos)
+        elif opcao == '3':
+            visualizar_carrinho(carrinho)
+        elif opcao == '4':
+            finalizar_compra(carrinho)
+            break
+        elif opcao == '5':
+            print("Saindo da lojinha virtual.")
+            break
+        else:
+            print("Opção inválida. Tente novamente.")
+
+if __name__ == "__main__":
+    main()
