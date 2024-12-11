@@ -26,7 +26,7 @@ class Aluno:
     def calcularMedia(self):
         if self._notas:
             return sum(self._notas) / len(self._notas)
-        # sum - somar tudo qu está na lista
+        # sum - somar tudo que está na lista
         # len - quantidade de itens na lista
         # \ - dividir 
         else: 
