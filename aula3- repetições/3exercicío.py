@@ -1,3 +1,6 @@
+"""
+3)ler 3 números Depois de ler todos os números o algoritmo deve apresentar na tela o maior dos números lidos
+"""
 maior = 0
 
 for i in range (0,3,1) :

@@ -13,7 +13,7 @@
 
 import json
 import os
-# 
+# import os - Sistemas
 # Verifica se o arquivo existe, caso não, cria um novo
 
 class Aluno:
